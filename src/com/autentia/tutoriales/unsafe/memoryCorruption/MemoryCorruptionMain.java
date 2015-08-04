@@ -14,15 +14,17 @@ public class MemoryCorruptionMain {
 
         // conseguimos true
         try {
-            final Unsafe unsafe = UnsafeUtilities.getUnsafe();
-            final Field f = guard.getClass().getDeclaredField("ACCESS_ALLOWED");
-            unsafe.putInt(guard, unsafe.objectFieldOffset(f), 42); // corrupción de memoria
+            corruptField(guard);
 
-            System.out.println(guard.giveAccess()); // true, accedemos
+            System.out.println(guard.giveAccess()); // true
         } catch (final Exception e) {
             System.err.println(e.getMessage());
         }
-
     }
 
+    private static void corruptField(AccessChecker guard) throws Exception {
+        final Unsafe unsafe = UnsafeUtilities.getUnsafe();
+        final Field f = guard.getClass().getDeclaredField("ACCESS_ALLOWED");
+        unsafe.putInt(guard, unsafe.objectFieldOffset(f), 42); // corrupción de memoria
+    }
 }
