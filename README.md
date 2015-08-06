@@ -5,3 +5,5 @@ Casos de uso de sun.misc.Unsafe en Java
 + Inicialización
 + Corrupción de memoria
 + Esconder contraseñas
++ Super Arrays
++ Concurrencia
