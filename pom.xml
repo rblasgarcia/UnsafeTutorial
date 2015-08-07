@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.autentia.tutoriales</groupId>
-  <artifactId>unsafe-tutorial</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>UnsafeTutorial</name>
-  <description>Código de ejemplo del tutorial sobre Unsafe</description>
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.autentia.tutoriales</groupId>
+	<artifactId>unsafe-tutorial</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>UnsafeTutorial</name>
+	<description>Código de ejemplo del tutorial sobre usos de sun.misc.Unsafe de Java</description>
+
 
 	<dependencies>
 
@@ -42,5 +43,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
