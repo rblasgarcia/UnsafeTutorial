@@ -17,8 +17,7 @@ public class UnsafeUtilitiesTest {
             e.printStackTrace();
             fail("No debería haber fallado");
         }
-
-        assertNotNull
+        
 
     }
 
