@@ -17,12 +17,7 @@ public class ConcurrencyMain {
 
         final ExecutorService service = Executors.newFixedThreadPool(NUM_OF_THREADS);
 
-        Counter counter = null;
-        try {
-            counter = new UnsafeCounter();
-        } catch (final Exception e) {
-            System.err.println(e.getMessage());
-        }
+        Counter counter = createCounter();
 
         final long before = System.currentTimeMillis();
 
@@ -41,6 +36,16 @@ public class ConcurrencyMain {
 
         System.out.println("Valor final del contador: " + counter.getCurrentValue());
         System.out.println("Tiempo trasncurrido: " + (after - before) + " ms");
+    }
+
+    private static Counter createCounter() {
+        Counter counter = null;
+        try {
+            counter = new UnsafeCounter();
+        } catch (final Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return counter;
     }
 
     private static void runThreads(final ExecutorService service, final Counter counter) {

@@ -61,6 +61,5 @@ public class SuperArray {
 
     public void destroy() throws Exception {
         UnsafeUtilities.getUnsafe().freeMemory(address);
-
     }
 }

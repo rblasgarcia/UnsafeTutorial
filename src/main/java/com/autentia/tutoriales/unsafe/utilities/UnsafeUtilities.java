@@ -6,6 +6,10 @@ import sun.misc.Unsafe;
 
 public class UnsafeUtilities {
 
+    private static final int ADRDRESS_64_BIT = 8;
+
+    private static final int ADRDRESS_32_BIT = 4;
+
     public static Unsafe getUnsafe() throws Exception {
         final Field f = Unsafe.class.getDeclaredField("theUnsafe");
         f.setAccessible(true);
@@ -34,10 +38,10 @@ public class UnsafeUtilities {
 
     private static long addressByArchitecture(int addressSize, Object[] array, long baseOffset) throws Exception {
         switch (addressSize) {
-        case 4:
+        case ADRDRESS_32_BIT:
             return getUnsafe().getInt(array, baseOffset);
 
-        case 8:
+        case ADRDRESS_64_BIT:
             return getUnsafe().getLong(array, baseOffset);
 
         default:

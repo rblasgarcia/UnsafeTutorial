@@ -18,7 +18,6 @@ public class CounterClient implements Runnable {
         for (int i = 0; i < maxIncrement; i++) {
             counter.increment();
         }
-
     }
 
 }
