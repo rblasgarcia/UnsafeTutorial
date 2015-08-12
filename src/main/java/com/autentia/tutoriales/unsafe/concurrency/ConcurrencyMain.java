@@ -17,7 +17,7 @@ public class ConcurrencyMain {
 
         final ExecutorService service = Executors.newFixedThreadPool(NUM_OF_THREADS);
 
-        Counter counter = createCounter();
+        final Counter counter = createCounter();
 
         final long before = System.currentTimeMillis();
 
